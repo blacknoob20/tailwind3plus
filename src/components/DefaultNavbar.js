@@ -11,9 +11,8 @@ import NavLink from '@material-tailwind/react/NavLink';
 import Dropdown from '@material-tailwind/react/Dropdown';
 import DropdownItem from '@material-tailwind/react/DropdownItem';
 import Icon from '@material-tailwind/react/Icon';
-import Button from '@material-tailwind/react/Button';
 
-export default function DefaultNavbar() {
+const DefaultNavbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
 
     return (
@@ -25,12 +24,9 @@ export default function DefaultNavbar() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <NavbarBrand>Material Tailwind</NavbarBrand>
+                        <NavbarBrand>Prefectura</NavbarBrand>
                     </a>
-                    <NavbarToggler
-                        onClick={() => setOpenNavbar(!openNavbar)}
-                        color="white"
-                    />
+                    <NavbarToggler onClick={() => setOpenNavbar(!openNavbar)} color="white" />
                 </NavbarWrapper>
 
                 <NavbarCollapse open={openNavbar}>
@@ -42,8 +38,7 @@ export default function DefaultNavbar() {
                                 rel="noreferrer"
                                 ripple="light"
                             >
-                                <Icon name="description" size="2xl" />
-                                &nbsp;Docs
+                                <Icon name="description" size="2xl" />&nbsp;Docs
                             </NavLink>
                             <NavLink
                                 href="https://material-tailwind.com/components?ref=mtk"
@@ -51,8 +46,7 @@ export default function DefaultNavbar() {
                                 rel="noreferrer"
                                 ripple="light"
                             >
-                                <Icon name="apps" size="2xl" />
-                                &nbsp;Components
+                                <Icon name="apps" size="2xl" />&nbsp;Components
                             </NavLink>
                             <div className="text-white">
                                 <Dropdown
@@ -61,74 +55,26 @@ export default function DefaultNavbar() {
                                     buttonType="link"
                                     buttonText={
                                         <div className="py-2.5 font-medium flex items-center">
-                                            <Icon
-                                                name="view_carousel"
-                                                size="2xl"
-                                                color="white"
-                                            />
-                                            <span className="ml-2">
-                                                Templates
-                                            </span>
+                                            <Icon name="view_carousel" size="2xl" color="white" />
+                                            <span className="ml-2">Templates</span>
                                         </div>
                                     }
                                     ripple="light"
                                 >
                                     <Link to="/">
-                                        <DropdownItem color="lightBlue">
-                                            Landing
-                                        </DropdownItem>
+                                        <DropdownItem color="lightBlue">Landing</DropdownItem>
                                     </Link>
                                     <Link to="/profile">
-                                        <DropdownItem color="lightBlue">
-                                            Profile
-                                        </DropdownItem>
+                                        <DropdownItem color="lightBlue">Profile</DropdownItem>
                                     </Link>
                                     <Link to="/login">
-                                        <DropdownItem color="lightBlue">
-                                            Login
-                                        </DropdownItem>
+                                        <DropdownItem color="lightBlue">Login</DropdownItem>
                                     </Link>
                                     <Link to="/register">
-                                        <DropdownItem color="lightBlue">
-                                            Register
-                                        </DropdownItem>
+                                        <DropdownItem color="lightBlue">Register</DropdownItem>
                                     </Link>
                                 </Dropdown>
                             </div>
-                            <NavLink
-                                href="https://github.com/creativetimofficial/material-tailwind?ref=mtk"
-                                target="_blank"
-                                rel="noreferrer"
-                                ripple="light"
-                            >
-                                <Icon
-                                    family="font-awesome"
-                                    name="fab fa-github"
-                                    size="xl"
-                                />
-                                &nbsp;Github
-                            </NavLink>
-                            <NavLink
-                                href="https://github.com/creativetimofficial/material-tailwind/issues?ref=mtk"
-                                target="_blank"
-                                rel="noreferrer"
-                                ripple="light"
-                            >
-                                Issues
-                            </NavLink>
-                            <a
-                                href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <Button
-                                    color="transparent"
-                                    className="bg-white text-black ml-4"
-                                    ripple="dark"
-                                >
-                                    Free Download
-                                </Button>
-                            </a>
                         </div>
                     </Nav>
                 </NavbarCollapse>
@@ -136,3 +82,5 @@ export default function DefaultNavbar() {
         </Navbar>
     );
 }
+
+export default DefaultNavbar
